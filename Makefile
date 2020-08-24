@@ -28,6 +28,7 @@ SDK_BASE	?= $(BUILD_AREA)/esp-open-sdk/sdk
 
 # # esptool.py path and port
 ESPTOOL		?= $(XTENSA_TOOLS_ROOT)/esptool.py
+#ESPTOOL        ?= /home/malf/.arduino15/packages/esp32/tools/esptool_py/2.6.1/esptool.py
 ESPPORT		?= /dev/ttyUSB0
 ESPTOOLBAUD	?= 115200
 ESPTOOLOPTS	= -ff 40m -fm dio -fs 32m
@@ -36,11 +37,11 @@ ESPTOOLOPTS	= -ff 40m -fm dio -fs 32m
 TARGET		= app
 
 # which modules (subdirectories) of the project to include in compiling
-MODULES		= driver user mqtt easygpio
+MODULES		= driver user uMQTTBroker/src easygpio
 #EXTRA_INCDIR    = include $(BUILD_AREA)/esp-open-sdk/esp-open-lwip/include
 EXTRA_INCDIR    = include
 
-#LIB_MODULES	= mqtt
+LIB_MODULES	= mqtt
 
 # libraries used in this project, mainly provided by the SDK
 LIBS		= c gcc hal pp phy net80211 lwip_open_napt wpa wpa2 main

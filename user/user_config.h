@@ -100,7 +100,7 @@
 // Packets are mirrored in pcap format to the given port.
 // CAUTION: this might be a privacy issue!!!
 //
-#define		REMOTE_MONITORING 1
+#define		REMOTE_MONITORING 0
 
 #define		MONITOR_BUFFER_SIZE 0x3c00
 

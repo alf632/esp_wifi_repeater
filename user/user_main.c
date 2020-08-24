@@ -52,7 +52,7 @@
 #endif
 
 #if MQTT_CLIENT
-#include "mqtt.h"
+#include "mqtt/mqtt.h"
 #endif
 
 #define os_sprintf_flash(str, fmt, ...)                                    \
@@ -3359,7 +3359,7 @@ static void ICACHE_FLASH_ATTR handle_set_cmd(void *arg, char *cmd, char *val)
     console_handle_command(pespconn);
 }
 
-char *strstr(char *string, char *needle);
+//char *strstr(char *string, char *needle);
 char *strtok(char *str, const char *delimiters);
 char *strtok_r(char *s, const char *delim, char **last);
 
