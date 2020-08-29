@@ -126,6 +126,12 @@
 #define		MQTT_ID "ESPRouter"
 #define		MQTT_REPORT_INTERVAL 15 /*seconds*/
 
+// Define this if you want it to start the MQTT Server
+#define         MQTT_SERVER 1
+#define         MQTT_SERVER_PORT 1883
+#define         MQTT_MAX_SUBSCRIPTIONS 30
+#define         MQTT_MAX_RETAINED_TOPICS 30
+
 // Define this if you want to get messages about GPIO pin status changes
 //               #define USER_GPIO_IN 0
 

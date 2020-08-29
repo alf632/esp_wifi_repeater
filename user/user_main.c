@@ -1004,6 +1004,11 @@ void handlePinValueChange(uint16_t pin)
 #if MQTT_CLIENT
         mqtt_publish_int(MQTT_TOPIC_GPIOIN, buf, "%d", val);
 #endif
+#if MQTT_SERVER
+        MQTT_server_start(MQTT_SERVER_PORT, MQTT_MAX_SUBSCRIPTIONS, MQTT_MAX_RETAINED_TOPICS);
+        //uint16_t portno=1883, uint16_t max_subscriptions=30, uint16_t max_retained_topics=30
+        //mqttServer.init();
+#endif
         //os_printf("GPIO %d %d\r\n", (uint32_t)arg, val);
     }
 }
@@ -4342,6 +4347,7 @@ void ICACHE_FLASH_ATTR user_init()
 #endif
 
 #if GPIO_CMDS
+    //int8_t i ;
     for (i = 0; i < 17; i++)
     {
         if (config.gpiomode[i] == OUT)
